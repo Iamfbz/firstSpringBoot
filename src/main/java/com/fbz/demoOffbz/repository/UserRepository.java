@@ -3,6 +3,7 @@ package com.fbz.demoOffbz.repository;
 import com.fbz.demoOffbz.domain.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -34,6 +35,13 @@ public class UserRepository {
         //repository.put(id,user);
 
         return  repository.put(id,user)==null;
+    }
 
+    /**
+     * 返回所有用户列表
+     * @return
+     */
+    public Collection<User> findAll(){
+        return  repository.values();
     }
 }
